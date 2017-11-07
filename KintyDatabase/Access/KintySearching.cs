@@ -7,6 +7,7 @@ namespace KintyDatabase.Access
 {
     public class KintySearching
     {
+        // Implement paging and filtering
         public static IEnumerable<Transaction> GetAllTransactions(int userId, int limit)
         {
             using (var context = new KintyContext())
@@ -15,6 +16,7 @@ namespace KintyDatabase.Access
                     .Include(t => t.User)
                     .Include(t => t.Category)
                     .Include(t => t.CreditDetails)
+                    .Include(t => t.PaymentType)
                     .Where(t => t.UserId == userId)
                     .Take(limit)
                     .ToList();
