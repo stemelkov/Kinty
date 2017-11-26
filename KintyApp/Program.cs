@@ -17,7 +17,7 @@ namespace KintyApp
 
         static void ImportFromFile()
         {
-            var filename = @"d:\rawft.txt";
+            var filename = @"S:\Dropbox\ft-raw.txt";
             var reader = ReadAsLines(filename);
             foreach (var record in reader)
             {

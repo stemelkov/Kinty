@@ -18,6 +18,7 @@ namespace KintyDatabase.Access
                     .Include(t => t.CreditDetails)
                     .Include(t => t.PaymentType)
                     .Where(t => t.UserId == userId)
+                    .OrderByDescending(t => t.TransactionId)
                     .Take(limit)
                     .ToList();
                 return transactions;
